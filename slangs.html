@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+button.accordion {
+    background-color:  #1fbbd4 ;
+    color:  #4143b2 ;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #f1cca6 ; 
+}
+
+div.panel {
+    padding: 0	28px;
+    display: none;
+    background-color: #9fd1d8 ;
+}
+
+blockquote.blk{
+				padding:25px;
+}				
+</style>
+	
+		<link rel="stylesheet" type="text/css" href="css/slider_css.css">
+		
+</head>
+
+
+<body style="background-color:#3d3b42">
+	<!-- Slider Code  -->
+	<div class="slideshow-container" style="border:1px solid black">
+
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="images\slang_slider1.jpg" style="width:1480px; height:400px">
+		 <!-- <div class="text">Caption Text</div> -->
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="slider pics\no dude.jpg" style="width:1480px; height:350px">
+		 <!-- <div class="text">Caption Two</div> -->
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="slider pics\uk slang.jpg" style="width:1480px; height:350px"tyle="width:800px">
+		 <!-- <div class="	text">Caption Three</div> -->
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		</div>
+		<br>
+
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+
+	<button class="accordion">ASCII Art</button>
+	<div class="panel">
+		<blockquote class="blk">
+			ASCII art is a graphic design technique that uses computers for presentation and consists of pictures pieced together from the 95 printable (from a total of 128) characters defined by the ASCII Standard from 1963 and ASCII compliant character sets with proprietary extended characters (beyond the 128 characters of standard 7-bit ASCII). The term is also loosely used to refer to text based visual art in general. ASCII art can be created with any text editor, and is often used with free-form languages. Most examples of ASCII art require a fixed-width font (non-proportional fonts, as on a traditional typewriter) such as Courier for presentation.
+		</blockquote>
+	</div>
+	
+	<button class="accordion">Emoticons and verticons</button>
+	<div class="panel">
+		<blockquote class="blk">
+		  
+		 The simplest forms of ASCII art are combinations of two or three characters for expressing emotion in text. They are commonly referred to as 'emoticon', 'smilie', or 'smiley'.
+
+		 There is another type of one-line ASCII art that does not require the mental rotation of pictures, which is widely known in Japan as kaomoji (literally "face characters".) Traditionally, they are referred to as "ASCII face".
+
+		  More complex examples use several lines of text to draw large symbols or more complex figures.
+		</blockquote>
+	</div>
+
+	<button class="accordion">Random Test</button>
+	<div class="panel">
+	</div>
+<br>
+<br>
+<div align="center">
+<button>
+<a href="index.html">Home</a>
+</button> 
+</div>
+<script type="text/javascript" src="js/btn_accordian.js"></script>		
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("dot");
+	  if (n > slides.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";  
+	  }
+	  for (i = 0; i < dots.length; i++) {
+		  dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " active";
+	}
+</script>
+</body>
+</html>
