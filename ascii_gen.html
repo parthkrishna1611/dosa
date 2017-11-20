@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/ascii.css">
+</head>
+
+
+
+<body>
+    <div class="paper">
+        <div class="paper-content">
+            <textarea id="inputText" maxlength="100" autofocus>Hello there !&#10;ssup!
+            </textarea>
+ 
+           <p></p>        
+        </div>
+    </div>
+
+    <div>
+        <label for="font">Font:</label>
+        <select id="font">
+            <option value="3D Diagonal">3D Diagonal</option>
+            <option value="Bell">Bell</option>
+            <option value="Four Tops">Four Tops</option>
+            <option value="Dancing Font">Dancing Font</option>
+            <option value="Ghost">Ghost</option>
+            <option value="Graffiti">Graffiti</option>
+            <option value="Patorjk's Cheese">Patorjk's Cheese</option>
+            <option value="Standard" selected>Standard</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="outputFigDisplay">Output</label>
+    </div>    
+    
+    <div id="outputFigDisplay">
+    </div>
+
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/figlet.js"></script>
+
+<script>
+if (window.location.protocol === 'file:')
+{
+    alert('fetch APi does not support file: protocol.');
+}
+    
+figlet.defaults({
+    fontPath: 'fonts'
+});
+
+var update = function() {
+        var fontName = $('#font option:selected').val(),
+        inputText = $('#inputText').val(),
+        vLayout = $('#vLayout option:selected').val(),
+        hLayout = $('#hLayout option:selected').val();
+    figlet(inputText, {
+        font: fontName,
+        horizontalLayout: hLayout,
+        verticalLayout: vLayout
+    }, function(err, text) {
+        if (err) {
+            console.log('something went wrong...');
+            console.dir(err);
+            return;
+        }
+        $('#outputFigDisplay').html("<pre>" + text + "</pre>");
+    });
+};
+
+$('#hLayout').change(update);
+$('#vLayout').change(update);
+$('#font').change(update);
+$('#inputText').keyup(update);
+update(); // init
+
+</script>
+</footer>
+</body>
+</html>

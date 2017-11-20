@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />		
+<link rel="stylesheet" href="css/footer_relative.css" />
 <style>
 button.accordion {
-    background-color: #eee;
-    color: #444;
+    background-color: #1fbbd4;
+    color: #4143b2;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -16,36 +19,72 @@ button.accordion {
 }
 
 button.accordion.active, button.accordion:hover {
-    background-color: #ccc; 
+    background-color:#f1cca6; 
 }
 
 div.panel {
     padding: 0 18px;
     display: none;
-    background-color: white;
+    background-color: #9fd1d8;
+}
+blockquote.blk{
+				padding:25px;
 }
 </style>
+		<link rel="stylesheet" type="text/css" href="css/slider_css.css">		
 </head>
-<body>
-<img id="dosa" src="images/ascii.png" align="center">
+
+
+<body style="background-color:#3d3b42">
+
+	<!-- Slider Code  -->
+	<div class="slideshow-container" style="border:1px solid black">
+
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="images/slider/2men.png" style="width:1500px; height:350px">
+		 <!-- <div class="text">Caption Text</div> -->
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="images/slider/ascii art.jpg" style="width:1500px; height:350px">
+		 <!-- <div class="text">Caption Two</div> -->
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="images/ascii.png" style="width:1500px; height:350px">
+		 <!-- <div class="	text">Caption Three</div> -->
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+	</div>
+		<br>
+
+	<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+	</div>
+
 <button class="accordion">ASCII Art</button>
 <div class="panel">
-<blockquote>
+<blockquote class="blk">
    ASCII art is a graphic design technique that uses computers for presentation and consists of pictures pieced together from the 95 printable (from a total of 128) characters defined by the ASCII Standard from 1963 and ASCII compliant character sets with proprietary extended characters (beyond the 128 characters of standard 7-bit ASCII). The term is also loosely used to refer to text based visual art in general. ASCII art can be created with any text editor, and is often used with free-form languages. Most examples of ASCII art require a fixed-width font (non-proportional fonts, as on a traditional typewriter) such as Courier for presentation.
-</blockquote>
+</blockquote >
 </div>
 <button class="accordion">Emoticons and verticons</button>
 <div class="panel">
-<blockquote>
+<blockquote class="blk">
  The simplest forms of ASCII art are combinations of two or three characters for expressing emotion in text. They are commonly referred to as 'emoticon', 'smilie', or 'smiley'.
 
  There is another type of one-line ASCII art that does not require the mental rotation of pictures, which is widely known in Japan as kaomoji (literally "face characters".) Traditionally, they are referred to as "ASCII face".
 
  More complex examples use several lines of text to draw large symbols or more complex figures.
 </blockquote>
-</div>
-<button class="accordion">Random Test</button>
-<div class="panel">
 </div>
 <br>
 <br>
@@ -55,7 +94,23 @@ div.panel {
 </button> 
 </div>
 
-<script>
+<div id="footer">
+	<div class="copyright" float="left">
+			&copy;DOSA Inc. All rights reserved.
+	</div>
+<div id="social">
+	<a href="tel:+917406338696" class="fa fa-phone"></a>
+		<a href="mailto:parthkrishna1611@gmail.com" class="fa fa-envelope-o"></a>
+		<a href="#" class="fa fa-twitter"></a>
+		<a href="https://www.facebook.com/parthkrishna1611" target="_blank" class="fa fa-facebook"></a>
+		</div>
+</div>
+
+
+
+
+
+<script>	
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -71,5 +126,6 @@ for (i = 0; i < acc.length; i++) {
     }
 }
 </script>
+<script type="text/javascript" src="js/slider_javascript.js"></script>
 </body>
 </html>

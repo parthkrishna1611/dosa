@@ -1,0 +1,164 @@
+<html>
+	<head>
+		<title>DOSA</title>	
+	</head>
+		<style type="text/css">
+		/*body{
+			background-size:cover;
+			}*/	
+		ul{
+			color:white;
+			padding:10px;
+			margin-top:10px;
+			margin-bottom:15px;
+			list-style:none;
+			font-size:20px;
+			line-height:30px;
+			}
+		body{
+			background-size:cover;
+			font-weight:bold;
+			/*background-color: #3d3b42;*/
+			background-color:black;
+			box-shadow:0px 0px 10px;
+			padding:0px;
+			}
+		ul li{
+			float:left;
+			width:240px;
+			height:40px;
+			background-color:black;
+			opacity:.8;
+			line-height:40px;
+			text-align:center;
+			/*font-size:13px;*/
+			margin-right:3px;
+			}	
+		ul li a{
+			text-decoration:none;
+			color:white;
+			display:block;
+			}		
+		ul li a:hover{
+				background-color:orange;
+				}
+		ul li ul li{
+				display:none;
+				text-align:center;
+				font-style:italic;
+				font-size:19px;
+				font-family:monospace;
+				}
+		ul li:hover ul li{
+				display:block;
+         			}	
+		h1{
+			text-align:center;
+			color:white;
+			font-style:bold;					
+			font-size:30px;
+			font-family:monospace;
+			}
+		#container{
+			width:99.7%;
+			height:605px;
+			border:2px solid black;
+			margin:0 auto;
+			position:relative;
+			}			
+		#container>img{
+				width:100%;
+				height:100%;
+				position:absolute;
+				}
+		#container>.btn{
+				position:absolute;
+				width:50px;
+				height:50px;
+				border: white solid 3px;
+				border-radius:25px;
+				top:255px;	
+				background: black;
+				opacity: 0.6;
+				color:white;
+				font-size:20px;
+				}
+
+		#container>#btn1:hover{
+					box-shadow:10px 0px 20px 0px black;
+					}
+		#container>#btn2:hover{
+					box-shadow:-10px 0px 20px 0px black;
+					}												
+		#container>#btn2{
+				position:relative;
+				float:right;
+				}
+		</style>
+		<body>
+			<div id="cvr" style="background-color: #c9f3f5 ">
+				<center>
+					<div>
+						<img class="dosa" src="/home/rahul/Desktop/dosa/images/download.png" ><big>Dictionary Of Slangs and ASCII Art</big>
+					</div>	
+				</center>
+			</div>
+			<div id="navigation">
+			<center><ul>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="/home/rahul/Desktop/k/contact.html">Contact Us</a></li>
+				<li><a href="/home/rahul/Desktop/k/slang.html">News</a></li>
+			</ul>
+			</li>				
+		</ul></center><br>
+			<div id="body_pic">
+				<!--<img src="/home/rahul/Desktop/dosa/images/Slang_body.jpg" style="width:1580px; height:630px">
+			</div>-->	
+		</div>
+		<div id="container">
+			<img class="slides" src="/home/rahul/Desktop/k/Slang_body.jpg">
+			<img class="slides" src="/home/rahul/Desktop/k/slang_slider1.jpg">
+			<img class="slides" src="/home/rahul/Desktop/k/slg.png">
+			<img class="slides" src="/home/rahul/Desktop/k/3.jpg">
+			<img class="slides" src="/home/rahul/Desktop/k/7.jpg">
+			<img class="slides" src="/home/rahul/Desktop/k/hawai.jpg">	
+			<button class="btn" onclick="plusIndex(-1)" id="btn1">&#10094;</button>
+			<button class="btn" onclick="plusIndex(1)" id="btn2">&#10095;</button>
+		</div>
+		<script type="text/javascript">
+			var index=1;
+			function plusIndex(n){
+				index=index+n;
+				showImage(index);
+				}
+			showImage(1);
+				function showImage(n){
+					var i;
+					var x=document.getElementsByClassName("slides");
+					if(n>x.length){index=1};
+					if(n<1){index=x.length};
+					for(i=0; i<x.length; i++)
+						{
+							x[i].style.display="none";
+						}
+					x[index-1].style.display="block";
+					}
+			autoSlide();
+			function autoSlide(){
+				var i;
+				var x=document.getElementsByClassName("slides");
+				for(i=0; i<x.length; i++)
+						{
+							x[i].style.display="none";
+						}
+					if(index > x.length){index=1};
+					x[index-1].style.display="block";
+					index++;
+				setTimeout(autoSlide,2000);
+				}
+		</script>
+</body>
+</html>
+

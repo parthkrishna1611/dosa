@@ -1,0 +1,67 @@
+#div{
+	background-color: black;
+	background-blend-mode: multiply;
+}
+#footer {
+		padding: 0px 0 0px 0 ;
+		background-color:#333;
+		z-index: 100;
+  		opacity: 0.9;
+		overflow: hidden;
+		position: relative;
+		bottom:0;
+		left:0;
+		width: 100%;
+	}
+
+		#footer .copyright {
+			color: #fff;
+			font-size: 0.9rem;
+			margin-top: 10px;
+			margin-right: 20px;
+			padding: 0;
+			float:right;
+			background-color: : #000;
+		}
+.fa {
+	background: #333;
+  padding: 8px;
+  width:30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 4px;
+  margin-left: 10px;
+  border-radius: 20%;
+}
+.fa-facebook {
+  background: #333;
+  color: white;
+}
+.fa-facebook:hover {
+  color: grey;
+}
+.fa-twitter:hover {
+  color: grey;
+}
+.fa-phone:hover {
+  color: grey;
+}
+.fa-envelope-o:hover {
+  color: grey;
+}
+.fa-envelope-o{
+background: #333;
+  color: white;
+}
+.fa-twitter{
+background: #333;
+  color: white;}
+.fa-phone{
+background: #333;
+  color: white;
+}
+#social{
+	display:inline;
+	overflow: hidden;
+	free:right;
+}
